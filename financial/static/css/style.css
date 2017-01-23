@@ -1,0 +1,26 @@
+.form-group.form-group-0{
+    margin-bottom: 0px;
+}
+.auto-0 {
+    height: 0px;
+    margin: 0px;
+}
+.form-group.form-group-5{
+    margin-bottom: 5px;
+}
+.form-group-sm.form-group-xs .form-control{
+    height: 25px;
+    font-size: 11px;
+}
+.form-horizontal.form-shrink .checkbox-custom, .form-horizontal .radio-custom{
+    min-height: 25px;
+}
+.col-shrink{
+    padding-right: 0px;
+}
+.form-horizontal .form-group-sm .control-label.col-shrink{
+    font-size: 10px;
+}
+.form-group-5 .radio-custom label{
+    font-size: 11px;
+}
