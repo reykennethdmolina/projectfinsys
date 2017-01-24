@@ -84,7 +84,6 @@ urlpatterns = [
     url(r'^advertisingcategory/', include('advertisingcategory.urls', namespace='advertisingcategory')),
     url(r'^artype/', include('artype.urls', namespace='artype')),
     url(r'^fxtype/', include('fxtype.urls', namespace='fxtype')),
-    url(r'^function/', include('function.urls', namespace='function')),
     url(r'^companyproduct/', include('companyproduct.urls', namespace='companyproduct')),
     url(r'^circulationproduct/', include('circulationproduct.urls', namespace='circulationproduct')),
     url(r'^circulationcategory/', include('circulationcategory.urls', namespace='circulationcategory')),

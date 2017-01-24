@@ -78,7 +78,6 @@ INSTALLED_APPS = [
     'artype',
     'advertisingcategory',
     'fxtype',
-    'function',
     'companyproduct',
     'circulationproduct',
     'circulationcategory',
