@@ -29,7 +29,7 @@
         ul.tab li a:hover {background-color: #ddd;}
 
         /* Create an active/current tablink class */
-        ul.tab li a:focus, .active {background-color: #ccc;}
+        ul.tab li a:focus, form .active {background-color: #ccc;}
 
         /* Style the tab content */
         .tabcontent {
@@ -41,6 +41,10 @@
         }
         .help-block.form-error{
             font-size: 12px;
+        }
+
+        .tiga-pitik{
+            background-color: #f2dede;
         }
     </style>
 {% endblock extra_css %}
@@ -358,6 +362,7 @@
                             </div>
                         </div>
                         <div class="form-group margin-bottom-0">
+                            <ul id="errorList"></ul>
                             <br><button type="submit" class="btn btn-info" id="validateButton">Submit</button>
                         </div>
                     </form>
@@ -395,6 +400,25 @@ function openTab(evt, tabName) {
 $(document).ready(function() {
     openTab(event, 'maindetails');
     $('.tablinks').eq(0).addClass('active');
+
+    $('#validateButton').on('click', function(){
+        setTimeout(red,1)
+    })
+
+    function red(){
+        if ($('#maindetails').find(".has-error").length > 0){ $('.tab li:eq(0)').addClass('tiga-pitik')}
+        else{$('.tab li:eq(0)').removeClass('tiga-pitik')}
+        if ($('#addresses').find(".has-error").length > 0){$('.tab li:eq(1)').addClass('tiga-pitik')}
+        else{$('.tab li:eq(1)').removeClass('tiga-pitik')}
+        if ($('#creditdetails').find(".has-error").length > 0){$('.tab li:eq(2)').addClass('tiga-pitik')}
+        else{$('.tab li:eq(2)').removeClass('tiga-pitik')}
+        if ($('#contactperson').find(".has-error").length > 0){$('.tab li:eq(3)').addClass('tiga-pitik')}
+        else{$('.tab li:eq(3)').removeClass('tiga-pitik')}
+        if ($('#others').find(".has-error").length > 0){$('.tab li:eq(4)').addClass('tiga-pitik')}
+        else{$('.tab li:eq(4)').removeClass('tiga-pitik')}
+        if ($('#balances').find(".has-error").length > 0){$('.tab li:eq(5)').addClass('tiga-pitik')}
+        else{$('.tab li:eq(5)').removeClass('tiga-pitik')}
+    }
 });
 
 </script>
