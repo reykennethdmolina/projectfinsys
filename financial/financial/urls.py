@@ -58,6 +58,7 @@ urlpatterns = [
     url(r'^supplier/', include('supplier.urls', namespace='supplier')),
     url(r'^mainsupplier_supplier/', include('mainsupplier_supplier.urls', namespace='mainsupplier_supplier')),
     url(r'^companyparameter/', include('companyparameter.urls', namespace='companyparameter')),
+    url(r'^employee/', include('employee.urls', namespace='employee')),
 
     # Apps Kelvin
     url(r'^ataxcode/', include('ataxcode.urls', namespace='ataxcode')),
@@ -91,6 +92,7 @@ urlpatterns = [
     url(r'^company/', include('company.urls', namespace='company')),
     url(r'^productbudget/', include('productbudget.urls', namespace='productbudget')),
     url(r'^department/', include('department.urls', namespace='department')),
+    url(r'^jvtype/', include('jvtype.urls', namespace='jvtype')),
 
     # Login/Logout URLs
     url(r'^login/$', login, {'template_name': 'login.html'}),

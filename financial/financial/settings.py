@@ -95,6 +95,8 @@ INSTALLED_APPS = [
     'companyparameter',
     'department',
     'journalvoucher',
+    'jvtype',
+    'employee',
 ]
 
 MIDDLEWARE_CLASSES = [
