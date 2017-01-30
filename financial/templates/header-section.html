@@ -69,7 +69,7 @@
                     {% for mainmodule in mainmodule_list %}
                     <li>
                         <a class="waves-effect waves-light" href="javascript:void(0)"> <i class="layout-icon {{ mainmodule.list.0.mainiconfile }}" aria-hidden="true"></i> {{ mainmodule.grouper }} <span class="arrow_carrot-down" aria-hidden="true"></span></a>
-                        <ul class="utmenu-submenu">
+                        <ul class="utmenu-submenu" style="height: auto; overflow:auto; max-height: 400px;">
                             {% for module in mainmodule.list %}
                             <li><a class="waves-effect waves-light" href="/{{module.app_label}}/">{{ module.modulename }}</a></li>
                             {% endfor %}
