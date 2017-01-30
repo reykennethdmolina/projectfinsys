@@ -1,7 +1,16 @@
 {% extends 'base-form.html' %}
 {% block page-title %} Customer {% endblock page-title %}
 {% load humanize %}
-
+{% block extra_css %}
+    <style>
+    h4.list-title{
+        padding-bottom: 10px;
+    }
+    div.panel-body{
+        padding: 20px 30px;
+    }
+    </style>
+{% endblock extra_css %}
 {% block page-content %}
 <div class="page-content container-fluid page">
     <div class="row">
@@ -13,9 +22,9 @@
                 </ul>
                 <div class="tab-content padding-top-0">
                     <div class="tab-pane active" id="profiles" role="tabpanel">
-                        <div class="panel top-profile skill-profile margin-bottom-25">
+                        <div class="panel top-profile skill-profile margin-bottom-20">
                             <div class="panel-body">
-                                <!-- <h4 class="list-title">Personal Information</h4> -->
+                                <h4 class="list-title">Main Details</h4>
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <div class="first-name-profile">
@@ -41,9 +50,16 @@
                                             <span class="detail-profile">{{ object.tin }}</span>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel top-profile skill-profile margin-bottom-20">
+                            <div class="panel-body">
+                                <h4 class="list-title">Addresses and Contact Numbers</h4>
+                                <div class="row">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         <div class="first-name-profile">
-                                            <br><br><span class="text-name-profile text-info">Address 1 : </span>
+                                            <span class="text-name-profile text-info">Address 1 : </span>
                                             <span class="detail-profile">{{ object.address1 }}</span>
                                         </div>
                                     </div>
@@ -61,13 +77,13 @@
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <div class="first-name-profile">
-                                            <br><br><span class="text-name-profile text-info">Tel. No. 1 : </span>
+                                            <br><span class="text-name-profile text-info">Tel. No. 1 : </span>
                                             <span class="detail-profile">{{ object.telno1 }}</span>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <div class="first-name-profile">
-                                            <br><br><span class="text-name-profile text-info">Fax No. 1 : </span>
+                                            <br><span class="text-name-profile text-info">Fax No. 1 : </span>
                                             <span class="detail-profile">{{ object.faxno1 }}</span>
                                         </div>
                                     </div>
@@ -95,126 +111,6 @@
                                             <span class="detail-profile">{{ object.pagerno }}</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <br><br><span class="text-name-profile text-info">Pay Terms : </span>
-                                            <span class="detail-profile">{{ object.payterms }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <span class="text-name-profile text-info">Credit Term : </span>
-                                            <span class="detail-profile">{{ object.creditterm.description }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <span class="text-name-profile text-info">Credit Limit : </span>
-                                            <span class="detail-profile">{{ object.creditlimit|floatformat:2|intcomma }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <span class="text-name-profile text-info">Credit Status : </span>
-                                            <span class="detail-profile">{{ object.get_creditstatus_display }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <span class="text-name-profile text-info">Credit Rating : </span>
-                                            <span class="detail-profile">{{ object.creditrating }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <br><br><span class="text-name-profile text-info">Contact Person : </span>
-                                            <span class="detail-profile">{{ object.contactperson }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <span class="text-name-profile text-info">Contact Position : </span>
-                                            <span class="detail-profile">{{ object.contactposition }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <span class="text-name-profile text-info">Email Address : </span>
-                                            <span class="detail-profile">{{ object.contactemail }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <br><br><span class="text-name-profile text-info">Currency : </span>
-                                            <span class="detail-profile">{{ object.currency.description }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <span class="text-name-profile text-info">Bank Account : </span>
-                                            <span class="detail-profile">{{ object.bankaccount.accountnumber }} ({{ object.bankaccount.bank.code }} {{ object.bankaccount.bankaccounttype.description }})</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <span class="text-name-profile text-info">Industry : </span>
-                                            <span class="detail-profile">{{ object.industry.name }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <span class="text-name-profile text-info">Multiple Status : </span>
-                                            <span class="detail-profile">{{ object.get_multiplestatus_display }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <span class="text-name-profile text-info">Remarks : </span>
-                                            <span class="detail-profile">{{ object.remarks }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <br><br><span class="text-name-profile text-info">Beg. Amount : </span>
-                                            <span class="detail-profile">{{ object.beg_amount|floatformat:2|intcomma }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <br><br><span class="text-name-profile text-info">End Amount : </span>
-                                            <span class="detail-profile">{{ object.end_amount|floatformat:2|intcomma }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <span class="text-name-profile text-info">Beg. Code : </span>
-                                            <span class="detail-profile">{{ object.get_beg_code_display }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <span class="text-name-profile text-info">End Code : </span>
-                                            <span class="detail-profile">{{ object.get_end_code_display }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <span class="text-name-profile text-info">Beg. Date : </span>
-                                            <span class="detail-profile">{{ object.beg_date }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <span class="text-name-profile text-info">End Date : </span>
-                                            <span class="detail-profile">{{ object.end_date }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <div class="first-name-profile">
-                                            <br><br><span class="text-name-profile text-info">Status : </span>
-                                            <span class="detail-profile">{{ object.status_verbose }}</span>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -226,7 +122,7 @@
         <div class="col-md-4">
             <div class="right-box-profile">
                 <h4 class="skill-title">Activity Logs</h4>
-                <div class="panel">
+                <div class="panel margin-bottom-20">
                     <div class="panel-body">
                         <div class="master-degree">
                             <span class="degree-name text-info">Created By:</span>
@@ -254,6 +150,162 @@
                                 </button>
                             </a>
                             {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-box-profile">
+                <div class="panel margin-bottom-20">
+                    <div class="panel-body">
+                        <div class="master-degree">
+                            <span class="degree-name text-info">STATUS:</span>
+                            <div class="univer-profile">{{ object.status_verbose }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="panel top-profile skill-profile margin-bottom-20 margin-right-30 margin-left-35 col-md-6">
+                <div class="panel-body">
+                    <h4 class="list-title">Other Details</h4>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">Currency : </span>
+                                <span class="detail-profile">{{ object.currency.description }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">Bank Account : </span>
+                                <span class="detail-profile">{{ object.bankaccount.accountnumber }} ({{ object.bankaccount.bank.code }} {{ object.bankaccount.bankaccounttype.description }})</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">Industry : </span>
+                                <span class="detail-profile">{{ object.industry.name }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">Multiple Status : </span>
+                                <span class="detail-profile">{{ object.get_multiplestatus_display }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">Remarks : </span>
+                                <span class="detail-profile">{{ object.remarks }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel top-profile skill-profile margin-bottom-20 col-md-5">
+                <div class="panel-body">
+                    <h4 class="list-title">Credit Details</h4>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">Pay Terms : </span>
+                                <span class="detail-profile">{{ object.payterms }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">Credit Term : </span>
+                                <span class="detail-profile">{{ object.creditterm.description }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">Credit Limit : </span>
+                                <span class="detail-profile">{{ object.creditlimit|floatformat:2|intcomma }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">Credit Status : </span>
+                                <span class="detail-profile">{{ object.get_creditstatus_display }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">Credit Rating : </span>
+                                <span class="detail-profile">{{ object.creditrating }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="panel top-profile skill-profile margin-bottom-20 margin-right-30 margin-left-35 col-md-6">
+                <div class="panel-body">
+                    <h4 class="list-title">Balances</h4>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">Beg. Amount : </span>
+                                <span class="detail-profile">{{ object.beg_amount|floatformat:2|intcomma }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">Beg. Code : </span>
+                                <span class="detail-profile">{{ object.get_beg_code_display }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">Beg. Date : </span>
+                                <span class="detail-profile">{{ object.beg_date }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">End Amount : </span>
+                                <span class="detail-profile">{{ object.end_amount|floatformat:2|intcomma }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">End Code : </span>
+                                <span class="detail-profile">{{ object.get_end_code_display }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">End Date : </span>
+                                <span class="detail-profile">{{ object.end_date }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel top-profile skill-profile margin-bottom-20 col-md-5">
+                <div class="panel-body">
+                    <h4 class="list-title">Contact Person Details</h4>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">Name : </span>
+                                <span class="detail-profile">{{ object.contactperson }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">Position : </span>
+                                <span class="detail-profile">{{ object.contactposition }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="first-name-profile">
+                                <span class="text-name-profile text-info">Email Address : </span>
+                                <span class="detail-profile">{{ object.contactemail }}</span>
                             </div>
                         </div>
                     </div>

@@ -12,7 +12,7 @@ class Company(models.Model):
     address2 = models.CharField(max_length=250, null=True, blank=True)
     address3 = models.CharField(max_length=250, null=True, blank=True)
     telno = models.CharField(max_length=20, null=True, blank=True)
-    tin = models.CharField(max_length=15, null=True, blank=True)
+    tin = models.CharField(max_length=20, null=True, blank=True)
     STATUS_CHOICES = (
         ('A', 'Active'),
         ('I', 'Inactive'),

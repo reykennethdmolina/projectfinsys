@@ -23,7 +23,7 @@ class Supplier(models.Model):
     address1 = models.CharField(max_length=250)
     address2 = models.CharField(max_length=250, blank=True, null=True)
     address3 = models.CharField(max_length=250, blank=True, null=True)
-    tin = models.CharField(max_length=15)
+    tin = models.CharField(max_length=20)
     telno = models.CharField(max_length=20, blank=True, null=True)
     faxno = models.CharField(max_length=20, blank=True, null=True)
     zipcode = models.CharField(max_length=10, blank=True, null=True)

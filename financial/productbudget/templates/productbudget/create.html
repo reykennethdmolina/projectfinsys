@@ -16,14 +16,14 @@
                         <div class="col-md-3">
                             <div class="form-group form-group-sm">
                                 <span class="help-block form-error">{{ form.non_field_errors.as_text }}</span>
-                                <label for="id_year" class="col-sm-3 control-label">Year</label>
+                                <label for="id_year" class="col-sm-3 control-label" style="text-align:left">Year</label>
                                 <div class="col-sm-9">
                                     <input type="number" class="form-control" id="id_year" min="1980" max="2100" placeholder="Year" name="year" data-validation="required" value="{{ form.year.value|default:'' }}">
                                 </div>
                                 <span class="help-block form-error">{{ form.year.errors.as_text }}</span>
                             </div>
                             <div class="form-group form-group-5 form-group-sm form-material">
-                                <label for="id_product" class="col-sm-3 control-label">Product</label>
+                                <label for="id_product" class="col-sm-3 control-label" style="text-align:left">Product</label>
 								<div class="col-sm-9">
                                     <select id="id_product" name="product" class="form-control">
                                         <option value="">-- Select --</option>
@@ -36,7 +36,7 @@
 								</div>
 							</div>
                             <div class="form-group form-group-5 form-group-sm form-material">
-                                <label for="id_product" class="col-sm-3 control-label">Account</label>
+                                <label for="id_product" class="col-sm-3 control-label" style="text-align:left">Account</label>
 								<div class="col-sm-9">
                                     <select id="id_chartofaccount" name="chartofaccount" class="form-control">
                                         <option value="">-- Select --</option>

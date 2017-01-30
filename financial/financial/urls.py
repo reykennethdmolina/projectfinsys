@@ -55,8 +55,7 @@ urlpatterns = [
     url(r'^serviceinformation/', include('serviceinformation.urls', namespace='serviceinformation')),
     url(r'^outputvat/', include('outputvat.urls', namespace='outputvat')),
     url(r'^supplier/', include('supplier.urls', namespace='supplier')),
-    url(r'^mainsupplier_supplier/',
-        include('mainsupplier_supplier.urls', namespace='mainsupplier_supplier')),
+    url(r'^mainsupplier_supplier/', include('mainsupplier_supplier.urls', namespace='mainsupplier_supplier')),
     url(r'^companyparameter/', include('companyparameter.urls', namespace='companyparameter')),
 
     # Apps Kelvin
@@ -76,8 +75,7 @@ urlpatterns = [
     url(r'^ortype/', include('ortype.urls', namespace='ortype')),
     url(r'^paytype/', include('paytype.urls', namespace='paytype')),
     url(r'^potype/', include('potype.urls', namespace='potype')),
-    url(r'^serviceclassification/',
-        include('serviceclassification.urls', namespace='serviceclassification')),
+    url(r'^serviceclassification/', include('serviceclassification.urls', namespace='serviceclassification')),
     url(r'^productgroup/', include('productgroup.urls', namespace='productgroup')),
     url(r'^unitofmeasure/', include('unitofmeasure.urls', namespace='unitofmeasure')),
     url(r'^suppliertype/', include('suppliertype.urls', namespace='suppliertype')),

@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-group {{ form.code.errors|yesno:'has-error,' }}">
                             <label for="id_code" class="control-label">Code</label>
-                            <input type="text" class="form-control" id="id_code" maxlength="50" placeholder="Code" name="code" data-validation="required" value="{{ form.code.value|default:'' }}">
+                            <input type="text" class="form-control" id="id_code" maxlength="50" placeholder="Code" name="code" data-validation="required" readonly="readonly" value="{{ form.code.value|default:'' }}">
                             <span class="help-block form-error">{{ form.code.errors.as_text }}</span>
                         </div>
                         <div class="form-group">

@@ -31,7 +31,7 @@
                                     <div class="col-md-12">
                                         <div class="first-name-profile">
                                             <span class="text-name-profile text-info">Account Code : </span>
-                                            <span class="detail-profile">{{ object.chartofaccount.title }} - {{ object.chartofaccount.description }}</span>
+                                            <span class="detail-profile">[{{ object.chartofaccount.accountcode }}]<br> {{ object.chartofaccount.title }}<br> {{ object.chartofaccount.description }}</span>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -44,22 +44,30 @@
                                     <div class="col-md-12">
                                         <div class="first-name-profile">
                                             <span class="text-name-profile text-info">Remarks : </span>
-                                            <span class="detail-profile">{{ object.remarks }}</span>
+                                            <span class="detail-profile">{{ object.remarks|default:" - " }}</span>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="first-name-profile">
                                             <span class="text-name-profile text-info">Formula : </span>
-                                            <span class="detail-profile">{{ object.formula }}</span>
+                                            <span class="detail-profile">{{ object.formula|default:" - " }}</span>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="first-name-profile">
                                             <span class="text-name-profile text-info">Method : </span>
-                                            <span class="detail-profile">{{ object.method }}</span>
+                                            <span class="detail-profile">{{ object.method|default:" - " }}</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-12"><br></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane active" id="profiles" role="tabpanel">
+                        <div class="panel top-profile skill-profile margin-bottom-25">
+                            <div class="panel-body">
+                                <!-- <h4 class="list-title">Personal Information</h4> -->
+                                <div class="row">
                                     <div class="col-md-12">
                                         <table class="table table-hover table-striped" data-mobile-responsive="true">
                                             <thead>
