@@ -94,6 +94,7 @@ INSTALLED_APPS = [
     'productbudget',
     'companyparameter',
     'department',
+    'journalvoucher',
 ]
 
 MIDDLEWARE_CLASSES = [
