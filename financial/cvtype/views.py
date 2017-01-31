@@ -57,7 +57,9 @@ class UpdateView(UpdateView):
         self.object = form.save(commit=False)
         self.object.modifyby = self.request.user
         self.object.modifydate = datetime.datetime.now()
-        self.object.save()
+        # self.object.save(update_fields=self._meta.get_fields())
+        # print Cvtype._meta.get_fields()
+        self.object.save(update_fields=['description', 'modifyby', 'modifydate'])
         return HttpResponseRedirect('/cvtype')
 
 
