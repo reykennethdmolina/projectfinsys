@@ -24,3 +24,37 @@
 .form-group-5 .radio-custom label{
     font-size: 11px;
 }
+
+/*pagination css start*/
+#shade{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+    display: none;
+}
+.loader{
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+.paginate-page{
+    display: none;
+}
+.paginate{
+    cursor: pointer;
+}
+.pagination, .paginate-limit{
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px 0;
+}
+.paginate-limit{
+    max-width: 60px;
+    height: 38px;
+}
+/*pagination css end*/
