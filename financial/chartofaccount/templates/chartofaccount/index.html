@@ -92,6 +92,7 @@
             var searchvalue = '';
             var getList;
             var command;
+            var commandList = tableList.find('tr:eq(0) td:last()').html();
 
             $('.paginate-search-button').attr('disabled',true);
             pages(command);
@@ -167,7 +168,6 @@
                     $('#current').val(current);
 
                     tableList = $('table#datalist tbody');
-                    commandList = tableList.find('tr:eq(0) td:last()').html();
                     tableList.html('');
 
                     if(result.length > 0){
@@ -193,8 +193,6 @@
                             commandLink.find('a:eq(0)').attr("href", commandLink.find('a:eq(0)').attr("href").replace(oldPk, result[i].pk + "/"));
                             commandLink.find('a:eq(1)').attr("href", commandLink.find('a:eq(0)').attr("href").replace(oldPk, result[i].pk + "/"));
                             commandLink.find('a:eq(2)').attr("href", commandLink.find('a:eq(0)').attr("href").replace(oldPk, result[i].pk + "/"));
-
-                            $('#shade').fadeOut();
                         }
                         if(command == "search"){
                             $('#pagination-container').hide();
@@ -204,9 +202,12 @@
                             pages(command);
                             markpage(current, limit);
                         }
+                        $('#shade').fadeOut();
                     }
                     else{
-                        tableList.append("<tr><td colspan='4'> No result found </td>" + "</tr>");
+{#                        tableList.append("<tr><td colspan='4'> No result found </td>" + "</tr>");#}
+                        console.log(213)
+                        $('tbody').hide();
                         $('#shade').fadeOut();
                     }
                 }).fail(function() {
